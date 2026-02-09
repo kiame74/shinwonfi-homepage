@@ -1,0 +1,60 @@
+// This is your Prisma schema file
+// 데이터베이스 스키마 정의
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 문의하기 테이블
+model Inquiry {
+  id          String   @id @default(cuid())
+  category    String   // 관심 분야
+  name        String   // 이름/업체명
+  phone       String   // 연락처
+  email       String   // 이메일
+  distributor String?  // 현재 거래 업체 (선택)
+  consultType String?  // 상담 방식 (선택)
+  message     String   // 문의 내용
+  status      String   @default("pending") // pending, inProgress, completed
+  ipAddress   String?  // 스팸 방지용
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([status])
+  @@map("inquiries")
+}
+
+// 공지사항 테이블
+model Notice {
+  id        String   @id @default(cuid())
+  title     String   // 제목
+  content   String   // 내용 (Markdown 또는 HTML)
+  writer    String   @default("관리자") // 작성자
+  views     Int      @default(0) // 조회수
+  isFixed   Boolean  @default(false) // 고정 공지 여부
+  published Boolean  @default(true) // 게시 여부
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdAt(sort: Desc)])
+  @@index([isFixed])
+  @@map("notices")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // 해싱된 비밀번호
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
