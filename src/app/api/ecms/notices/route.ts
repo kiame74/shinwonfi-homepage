@@ -10,6 +10,7 @@ export async function GET(request: NextRequest) {
         const { searchParams } = new URL(request.url);
         const search = searchParams.get("search") || "";
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const where: any = {};
         if (search) {
             where.title = { contains: search };

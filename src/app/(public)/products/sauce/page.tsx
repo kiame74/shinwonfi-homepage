@@ -45,6 +45,7 @@ export default function SauceProductsPage() {
                         <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center">
                             <div className="flex-1 w-full">
                                 <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl group">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?q=80&w=2089&auto=format&fit=crop"
                                         alt="Seasonings"

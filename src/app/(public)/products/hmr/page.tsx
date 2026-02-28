@@ -17,6 +17,7 @@ export default function HmrProductsPage() {
                         <div className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="flex-1">
                                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop" alt="HMR" className="object-cover w-full h-full" />
                                 </div>
                             </div>

@@ -24,6 +24,7 @@ export default function GreetingsPage() {
                     <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
                         <div className="w-full md:w-1/3 flex-shrink-0 md:sticky md:top-24">
                             <div className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img src="/images/ceo.jpg" alt="CEO 조화연" className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500" />
                             </div>
                         </div>
@@ -43,7 +44,7 @@ export default function GreetingsPage() {
                             </p>
 
                             <div className="bg-gray-50 p-6 md:p-8 rounded-xl md:rounded-2xl border border-gray-100 italic text-gray-600 text-sm md:text-base">
-                                "신원에프아이 전 임직원은 혁신적이고, 긍정적인 사고와 적극적인 자세로 맡은바 업무에 충실히 임하여 경험과 기술을 축적시키고, 과감한 설비투자와 공정개선으로 위생적이고 안전한 품질의 먹거리를 제공하도록 연구, 개발, 생산에 총력을 다하여 있으며, 작은 수준의 만족에 안주하지 않고 미래에 더 큰 먹거리의 감동을 고객 여러분께 드리도록 최선의 노력을 다 할 것입니다."
+                                &quot;신원에프아이 전 임직원은 혁신적이고, 긍정적인 사고와 적극적인 자세로 맡은바 업무에 충실히 임하여 경험과 기술을 축적시키고, 과감한 설비투자와 공정개선으로 위생적이고 안전한 품질의 먹거리를 제공하도록 연구, 개발, 생산에 총력을 다하여 있으며, 작은 수준의 만족에 안주하지 않고 미래에 더 큰 먹거리의 감동을 고객 여러분께 드리도록 최선의 노력을 다 할 것입니다.&quot;
                             </div>
 
                             <p>

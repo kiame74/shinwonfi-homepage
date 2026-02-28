@@ -31,6 +31,7 @@ export default function ProductsPage() {
                         {categories.map((cat) => (
                             <Link key={cat.id} href={`/products/${cat.id}`} className="group">
                                 <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-xl mb-6">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img src={cat.image} alt={cat.name} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110" />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                                     <div className="absolute inset-x-0 bottom-0 p-8 text-white">

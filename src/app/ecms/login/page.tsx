@@ -30,7 +30,7 @@ export default function EcmsLoginPage() {
             } else {
                 setError(data.message || "로그인에 실패했습니다.");
             }
-        } catch (err) {
+        } catch {
             setError("서버와 통신 중 오류가 발생했습니다.");
         } finally {
             setIsLoading(false);

@@ -54,7 +54,8 @@ export default function Home() {
               src={slides[currentSlide].image}
               alt="Slide"
               fill
-              priority
+              priority={currentSlide === 0}
+              sizes="100vw"
               className="object-cover"
             />
           </motion.div>
@@ -73,17 +74,17 @@ export default function Home() {
               <h2 className="text-primary font-bold tracking-widest uppercase text-sm md:text-base">
                 {slides[currentSlide].subtitle}
               </h2>
-              <h1 className="text-4xl md:text-8xl font-black leading-tight break-keep">
+              <h1 className="text-4xl sm:text-5xl md:text-8xl font-black leading-tight break-keep">
                 {slides[currentSlide].title}
               </h1>
-              <p className="text-base md:text-2xl text-gray-200 leading-relaxed max-w-2xl font-medium break-keep">
+              <p className="text-base sm:text-lg md:text-2xl text-gray-200 leading-relaxed max-w-2xl font-medium break-keep">
                 {slides[currentSlide].desc}
               </p>
-              <div className="pt-8 flex flex-wrap gap-4">
-                <button className="bg-primary hover:bg-emerald-600 text-white px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl">
+              <div className="pt-8 flex flex-col sm:flex-row flex-wrap gap-4">
+                <button className="min-h-[48px] w-full sm:w-auto bg-primary hover:bg-emerald-600 text-white px-10 py-4 sm:py-5 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center">
                   회사 소개 보기
                 </button>
-                <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-5 rounded-full font-bold transition-all">
+                <button className="min-h-[48px] w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 sm:py-5 rounded-full font-bold transition-all flex items-center justify-center">
                   제품 라인업
                 </button>
               </div>
@@ -97,8 +98,12 @@ export default function Home() {
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
-              className={`h-1.5 transition-all duration-500 rounded-full ${idx === currentSlide ? 'w-12 bg-primary' : 'w-3 bg-white/30 hover:bg-white/50'}`}
-            />
+              className={`h-2 min-h-[44px] flex items-center justify-center transition-all duration-500 rounded-full cursor-pointer relative ${idx === currentSlide ? 'w-12 bg-primary' : 'w-3 bg-white/30 hover:bg-white/50'}`}
+              aria-label={`Go to slide ${idx + 1}`}
+            >
+              {/* Invisible touch target expander */}
+              <span className="absolute inset-x-[-10px] inset-y-[-16px]"></span>
+            </button>
           ))}
         </div>
       </section>
@@ -144,7 +149,7 @@ export default function Home() {
                     src={area.image}
                     alt={area.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
@@ -156,7 +161,7 @@ export default function Home() {
                     <p className="text-gray-300 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">
                       {area.desc}
                     </p>
-                    <button className="w-fit text-primary font-bold flex items-center space-x-2 border-b border-primary pb-1">
+                    <button className="w-fit text-primary font-bold flex items-center space-x-2 border-b border-primary pb-1 min-h-[44px]">
                       <span>상세보기</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -191,7 +196,7 @@ export default function Home() {
               <ScrollReveal delay={0.2}>
                 <div className="space-y-4">
                   <h3 className="text-primary font-bold uppercase tracking-widest">Our Strengths</h3>
-                  <h2 className="text-3xl md:text-5xl font-black text-secondary leading-tight">
+                  <h2 className="text-3xl md:text-5xl font-black text-secondary leading-tight break-keep">
                     최상의 맛은 <br />
                     안전에서 시작됩니다.
                   </h2>
@@ -233,7 +238,7 @@ export default function Home() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <button className="bg-white text-secondary px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all">
+              <button className="min-h-[44px] bg-white text-secondary px-8 py-3 w-full md:w-auto md:py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center">
                 자세히 보기
               </button>
             </ScrollReveal>

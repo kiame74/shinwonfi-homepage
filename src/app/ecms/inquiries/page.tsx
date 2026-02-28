@@ -45,6 +45,7 @@ export default function EcmsInquiriesPage() {
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchInquiries();
     }, [statusFilter, searchTerm]);

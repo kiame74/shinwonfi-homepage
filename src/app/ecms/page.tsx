@@ -1,6 +1,15 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
+// Fallback interface if Prisma client is not fully generated
+interface FallbackInquiry {
+    id: string;
+    name: string;
+    category: string;
+    status: string;
+    createdAt: Date;
+}
+
 export default async function EcmsDashboard() {
     // 통계 데이터 조회
     const [inquiryCount, pendingInquiries, totalNotices] = await Promise.all([
@@ -50,7 +59,7 @@ export default async function EcmsDashboard() {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100">
-                            {recentInquiries.map((iq) => (
+                            {recentInquiries.map((iq: FallbackInquiry) => (
                                 <tr key={iq.id} className="hover:bg-gray-50 transition-colors">
                                     <td className="px-6 py-4 font-bold text-secondary">{iq.name}</td>
                                     <td className="px-6 py-4 text-sm text-gray-600">{iq.category}</td>

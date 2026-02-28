@@ -18,7 +18,7 @@ export async function GET(
         }
 
         return NextResponse.json({ success: true, data: notice });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, message: "error" }, { status: 500 });
     }
 }
@@ -41,7 +41,7 @@ export async function PATCH(
         });
 
         return NextResponse.json({ success: true, data: updated });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, message: "update failed" }, { status: 500 });
     }
 }
@@ -58,7 +58,7 @@ export async function DELETE(
         const { id } = await params;
         await prisma.notice.delete({ where: { id } });
         return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, message: "delete failed" }, { status: 500 });
     }
 }

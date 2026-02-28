@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
         const search = searchParams.get("search") || "";
 
         // 검색 조건 구성
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const where: any = {};
 
         if (status !== "all") {

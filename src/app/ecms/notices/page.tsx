@@ -7,7 +7,6 @@ import Link from "next/link";
 import {
     Search,
     Plus,
-    MoreVertical,
     Edit,
     Trash2,
     Eye,
@@ -44,6 +43,7 @@ export default function EcmsNoticesPage() {
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         fetchNotices();
     }, [searchTerm]);

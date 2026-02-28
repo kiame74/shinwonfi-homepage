@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -52,10 +53,15 @@ export default function Header() {
         <>
             <header className="sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
                 <div className="container mx-auto px-4 h-20 md:h-24 flex items-center justify-between">
-                    <Link href="/" className="flex items-center space-x-2">
-                        <span className="text-3xl font-black text-primary tracking-tighter">
-                            SHINWON <span className="text-secondary">FI</span>
-                        </span>
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/logo.png"
+                            alt="신원에프아이 로고"
+                            width={160}
+                            height={50}
+                            style={{ height: 'auto' }}
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Menu */}
@@ -95,7 +101,7 @@ export default function Header() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="lg:hidden p-3 text-gray-700 hover:bg-gray-100 rounded-xl transition-colors z-[120]"
+                        className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-xl transition-colors z-[120]"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,15 +124,20 @@ export default function Header() {
                     <div className="h-full flex flex-col">
                         {/* Menu Header */}
                         <div className="flex items-center justify-between px-6 h-16 border-b border-gray-100 flex-shrink-0 bg-white">
-                            <span className="text-xl font-black text-primary tracking-tighter">
-                                SHINWON <span className="text-secondary">FI</span>
-                            </span>
+                            <Image
+                                src="/logo.png"
+                                alt="신원에프아이 로고"
+                                width={130}
+                                height={40}
+                                style={{ height: 'auto' }}
+                                priority
+                            />
                             <button
                                 onClick={() => {
                                     setIsOpen(false);
                                     setActiveMobileMenu(null);
                                 }}
-                                className="p-2 text-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                                className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-secondary hover:bg-gray-50 rounded-lg transition-colors"
                             >
                                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -141,7 +152,7 @@ export default function Header() {
                                     <div key={item.name} className="space-y-3">
                                         <button
                                             onClick={() => setActiveMobileMenu(activeMobileMenu === item.name ? null : item.name)}
-                                            className="flex items-center justify-between w-full py-1"
+                                            className="flex items-center justify-between w-full py-3 min-h-[44px]"
                                         >
                                             <span className={`text-xl font-bold transition-colors ${activeMobileMenu === item.name ? "text-primary" : "text-gray-800"}`}>
                                                 {item.name}
@@ -165,7 +176,7 @@ export default function Header() {
                                                     <Link
                                                         key={subItem.name}
                                                         href={subItem.href}
-                                                        className="text-gray-600 hover:text-primary font-medium py-1.5 block text-base transition-colors"
+                                                        className="text-gray-600 flex items-center hover:text-primary font-medium py-3 min-h-[44px] block text-base transition-colors"
                                                         onClick={() => {
                                                             setIsOpen(false);
                                                             setActiveMobileMenu(null);

@@ -79,6 +79,7 @@ export default function MeatProductsPage() {
                         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
                             <div className="flex-1 w-full order-1 md:order-none">
                                 <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl group">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2070&auto=format&fit=crop"
                                         alt="Meat Extract"

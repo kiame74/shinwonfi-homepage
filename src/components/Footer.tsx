@@ -24,19 +24,19 @@ export default function Footer() {
                     {/* Quick Links */}
                     <div>
                         <h3 className="text-white font-semibold mb-6">고객지원</h3>
-                        <ul className="space-y-3 text-sm">
+                        <ul className="space-y-1 text-sm">
                             <li>
-                                <Link href="/support" className="hover:text-primary transition-colors">
+                                <Link href="/support" className="inline-block py-2 min-h-[44px] hover:text-primary transition-colors">
                                     공지사항
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/support/contact" className="hover:text-primary transition-colors">
+                                <Link href="/support/contact" className="inline-block py-2 min-h-[44px] hover:text-primary transition-colors">
                                     문의하기
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/policy/privacy" className="hover:text-primary transition-colors">
+                                <Link href="/policy/privacy" className="inline-block py-2 min-h-[44px] hover:text-primary transition-colors">
                                     개인정보처리방침
                                 </Link>
                             </li>
@@ -46,19 +46,19 @@ export default function Footer() {
                     {/* Product Categories */}
                     <div>
                         <h3 className="text-white font-semibold mb-6">제품안내</h3>
-                        <ul className="space-y-3 text-sm">
+                        <ul className="space-y-1 text-sm">
                             <li>
-                                <Link href="/products/meat" className="hover:text-primary transition-colors">
+                                <Link href="/products/meat" className="inline-block py-2 min-h-[44px] hover:text-primary transition-colors">
                                     식육추출가공품
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/products/sauce" className="hover:text-primary transition-colors">
+                                <Link href="/products/sauce" className="inline-block py-2 min-h-[44px] hover:text-primary transition-colors">
                                     복합조미식품
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/products/hmr" className="hover:text-primary transition-colors">
+                                <Link href="/products/hmr" className="inline-block py-2 min-h-[44px] hover:text-primary transition-colors">
                                     HMR (가정간편식)
                                 </Link>
                             </li>
@@ -68,8 +68,8 @@ export default function Footer() {
 
                 <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-center md:text-left text-xs text-gray-600 gap-4">
                     <p>Copyright © 2015 ~ 2026 (주) 신원에프아이. All rights reserved.</p>
-                    <div className="flex space-x-6">
-                        <span className="cursor-pointer hover:text-white transition-colors">관리자 로그인</span>
+                    <div className="flex space-x-6 mt-4 md:mt-0">
+                        <span className="inline-block py-2 min-h-[44px] cursor-pointer hover:text-white transition-colors">관리자 로그인</span>
                     </div>
                 </div>
             </div>
