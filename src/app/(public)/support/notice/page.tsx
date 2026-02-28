@@ -39,6 +39,7 @@ export default function NoticePage() {
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const timer = setTimeout(() => {
             fetchNotices();
